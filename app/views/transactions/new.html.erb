@@ -1,0 +1,14 @@
+<h2>New Transaction</h2>
+
+<%= form_with url: account_transactions_path(@account), method: :post do |f| %>
+  <label>Amount</label>
+  <%= number_field_tag :amount %>
+
+  <label>Type</label>
+  <%= select_tag :transaction_type, options_for_select(["deposit","withdraw","transfer"]) %>
+
+  <label>Receiver Account (for transfer)</label>
+  <%= text_field_tag :receiver_account %>
+
+  <%= submit_tag "Submit" %>
+<% end %>

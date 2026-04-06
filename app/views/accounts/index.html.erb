@@ -1,0 +1,12 @@
+<h1>My Accounts</h1>
+
+<% @accounts.each do |acc| %>
+  <div>
+    <p>Account No: <%= acc.account_number %></p>
+    <p>Balance: ₹<%= acc.balance %></p>
+
+    <%= link_to "View", account_path(acc) %>
+  </div>
+<% end %>
+
+<%= link_to "Create Account", new_account_path %>
